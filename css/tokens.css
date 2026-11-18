@@ -1,0 +1,57 @@
+/* Transitions.dev scale: semantic aliases are shared with motion.js. */
+:root {
+  --duration-stagger: 40ms;
+  --duration-micro: 80ms;
+  --duration-quick: 150ms;
+  --duration-fast: 250ms;
+  --duration-medium: 350ms;
+  --duration-slow: 400ms;
+  --duration-very-slow: 500ms;
+  --ease-smooth-out: cubic-bezier(.22,1,.36,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+  --distance-micro: 4px;
+  --distance-base: 8px;
+  --distance-medium: 12px;
+  --scale-large: .96;
+  --motion-micro: var(--duration-quick);
+  --motion-enter: var(--duration-very-slow);
+  --motion-product: 800ms;
+  --motion-compact: var(--duration-slow);
+  --motion-stagger: var(--duration-stagger);
+  --motion-compact-stagger: var(--duration-stagger);
+  --motion-distance: var(--distance-medium);
+  --motion-compact-distance: var(--distance-base);
+  --motion-threshold: 48px;
+  --motion-hero-wait: 1000ms;
+  --motion-hero-duration: 4800ms;
+  --ease-out: var(--ease-smooth-out);
+  --ease-scene: var(--ease-in-out);
+  --motion-hover-in: var(--duration-fast);
+  --motion-hover-out: var(--duration-slow);
+  --motion-panel-open: var(--duration-slow);
+  --motion-panel-close: var(--duration-medium);
+  --motion-modal-open: var(--duration-fast);
+  --motion-modal-close: var(--duration-quick);
+  --orange: #ff6a21;
+  --amber: #ffb347;
+  --ink: #0d0d0d;
+  --paper: #f4e9d8;
+  --muted: #b5aaa0;
+  --surface: #171514;
+  --space-section: clamp(72px,8vw,120px);
+  --elevation: 0 24px 60px #0003;
+  --z-art: 2;
+  --z-copy: 3;
+  --ambient-base: #100f0e;
+  --ambient-red: #85312a16;
+  --ambient-warm: #aa795010;
+  --campaign-surface: #191615;
+  --explorer-surface: #191716;
+}
+body.light-theme {
+  --ambient-base: #f7f3ed;
+  --ambient-red: #9e342308;
+  --ambient-warm: #99705206;
+  --campaign-surface: #eee5da;
+  --explorer-surface: #f0e9df;
+}

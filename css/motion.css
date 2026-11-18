@@ -1,0 +1,52 @@
+/* Motion ownership: layout boxes rest; media-hover owns hover; WAAPI owns copy. */
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.motion-mask{overflow:visible}
+.motion-text{display:block;transform:none}
+.split-visual{display:inline-flex;white-space:nowrap}
+.split-mask{display:inline-block;overflow:clip;overflow-clip-margin:.06em}
+.split-char{display:inline-block}
+.reveal,.reveal.is-visible{opacity:1;transform:none}
+.button{min-height:48px;transition:transform var(--motion-hover-out) var(--ease-out),background var(--motion-micro),border-color var(--motion-micro)}
+.button>span{transition:transform var(--motion-hover-out) var(--ease-out)}
+.button:active,.add-button:active{transform:scale(.98)}
+:focus-visible{outline:2px solid var(--red);outline-offset:4px;scroll-margin-block:100px}
+.energy-tab:focus-visible{outline-color:var(--red)}
+.search-box:focus-within{border-color:var(--red)}
+.product-card.is-added{border-color:var(--red)}
+.cart-items:empty{display:none}
+.product-card .card-media img,.product-card:hover .card-media img:not(.is-missing){transition:none;transform:none;scale:none;translate:none;opacity:1}
+.product-card .media-hover{position:absolute;inset:0;transition:transform var(--motion-hover-out) var(--ease-out);transform:none}
+.product-card::before,.media-curtain{display:none}
+.product-card,.product-card:hover{transform:none;box-shadow:none;transition:border-color var(--motion-micro),background-color var(--motion-micro)}
+.card-rule{position:absolute;left:0;right:0;top:0;height:1px;background:var(--red);transform-origin:left;pointer-events:none;z-index:6}
+.menu-group .product-card:focus-within{border-color:var(--red)}
+.add-button{min-height:44px;transition:background var(--motion-micro),border-color var(--motion-micro),transform var(--motion-micro) var(--ease-out)}
+.nav-link::after{width:100%;left:0;transform:scaleX(0);transform-origin:left;transition:transform var(--duration-fast) var(--ease-out)}
+.nav-link:hover::after,.nav-link.is-active::after{transform:scaleX(1)}
+.filter{position:relative;isolation:isolate;transition:color var(--motion-micro),border-color var(--motion-micro),background var(--motion-micro)}
+.filter::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform var(--duration-fast) var(--ease-out)}
+.filter.is-active::after{transform:scaleX(1)}
+/* Transitions.dev modal/panel timings: dismissal is quicker, focus is immediate. */
+.cart-panel{will-change:auto;transition:transform var(--motion-panel-close) var(--ease-out),visibility 0s var(--motion-panel-close);visibility:hidden}
+.cart-panel.is-open{visibility:visible;transition:transform var(--motion-panel-open) var(--ease-out),visibility 0s}
+.product-modal{transform:translate(-50%,-50%) scale(var(--scale-large));transition:opacity var(--motion-modal-close),transform var(--motion-modal-close) var(--ease-out),visibility 0s var(--motion-modal-close)}
+.product-modal.is-open{transform:translate(-50%,-50%) scale(1);transition:opacity var(--motion-modal-open),transform var(--motion-modal-open) var(--ease-out),visibility 0s}
+.checkout-modal{transition:opacity var(--motion-modal-close),transform var(--motion-modal-close) var(--ease-out),visibility 0s var(--motion-modal-close)}
+.checkout-modal.is-open{transition:opacity var(--motion-modal-open),transform var(--motion-modal-open) var(--ease-out),visibility 0s}
+.overlay{transition:opacity var(--duration-quick)}
+.overlay.is-open{transition-duration:var(--duration-fast)}
+.toast{transition:opacity var(--duration-medium),transform var(--duration-medium) var(--ease-out);transform:translate(-50%,12px)}
+.toast.is-visible{transform:translate(-50%,0);transition-duration:var(--duration-slow)}
+@media(hover:hover) and (pointer:fine){
+ .button:hover{transform:translateY(-2px);transition-duration:var(--motion-hover-in)}
+ .button:hover>span{transform:translate(3px,-2px);transition-duration:var(--motion-hover-in)}
+ .product-card:hover .media-hover{transform:scale(1.025);transition-duration:var(--motion-hover-in)}
+ .product-card:hover{border-color:var(--red)}
+}
+@media(hover:none){.button:hover,.button:hover>span,.explorer-tab:hover img{transform:none}}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+ .reveal,.motion-text,.split-char{opacity:1!important;transform:none!important}
+ .product-card,.product-card:hover,.product-card .card-media img,.product-card .media-hover{transform:none!important;translate:none!important;scale:none!important}
+ .category-rule,.card-rule{transform:scaleX(1)!important}
+}

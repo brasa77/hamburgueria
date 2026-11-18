@@ -1,0 +1,80 @@
+/* Editorial menu. Photography leads; numbers and rules set a quiet reading rhythm. */
+.menu .center-heading{display:grid;grid-template-columns:1fr auto;align-items:end;gap:0 48px}
+.menu .center-heading .eyebrow{grid-column:1/-1}
+.menu .center-heading>p:last-child{max-width:240px;line-height:1.7;margin:0 0 8px;font-size:14px}
+.menu .center-heading h2{font-size:clamp(76px,10.4vw,150px);line-height:.98}
+.menu .filters{margin:38px 0 24px;padding-bottom:18px;border-bottom:1px solid var(--line);gap:8px}
+.menu-tools{grid-template-columns:minmax(220px,1fr) auto;gap:24px}
+.menu-result{margin:16px 0 46px;font-size:9px;letter-spacing:.16em}
+.menu-group{margin-top:100px}
+.category-heading{display:grid;grid-template-columns:50px 1fr minmax(180px,280px);align-items:end;gap:20px;position:relative;padding:0 0 25px;margin-bottom:30px}
+.category-heading::after{display:none}
+.category-index{font:12px var(--inter);font-variant-numeric:tabular-nums;letter-spacing:.1em;color:var(--red);align-self:start;padding-top:7px}
+.category-heading h3{font-size:clamp(36px,4.1vw,60px);line-height:1.05;letter-spacing:-.01em}
+.category-heading p{font-size:12px;line-height:1.7;max-width:280px;margin:0;padding-bottom:2px}
+.category-rule{position:absolute;left:0;bottom:-1px;width:100%;height:1px;background:linear-gradient(90deg,var(--red),var(--line) 70%);transform-origin:left}
+.menu-group .product-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 24px;align-items:stretch}
+.menu-group .product-card{display:flex;flex-direction:column;border:1px solid var(--line);background:var(--black-2);border-radius:2px}
+.menu-group .card-media{aspect-ratio:5/4;min-height:0;flex:none}
+.menu-group[data-category=energeticos] .card-media{aspect-ratio:4/5}
+.menu-group[data-category=refrigerantes] .card-media,.menu-group[data-category=drinks] .card-media{aspect-ratio:5/4}
+.menu-group .card-content{padding:24px;display:flex;flex:1;flex-direction:column;min-width:0}
+.menu-group .card-meta{margin-bottom:18px;gap:12px;align-items:center}
+.menu-group .card-tag{font-size:8px;letter-spacing:.12em;margin:0;color:var(--red)}
+.menu-group .card-rating{font-size:10px;color:var(--gray);font-weight:500}
+.menu-group .card-content h3{font-size:clamp(27px,2.3vw,34px);line-height:1.12;letter-spacing:0;overflow-wrap:anywhere}
+.menu-group .card-content p{display:block;overflow:visible;font-size:12px;line-height:1.85;color:var(--gray);margin:13px 0 22px;-webkit-line-clamp:unset;line-clamp:unset}
+.menu-group .card-volume{margin:0 0 20px;color:var(--gray);font-size:10px}
+.menu-group .card-footer{margin-top:auto;padding-top:20px;gap:12px;border-top:1px solid var(--line);min-height:65px}
+.menu-group .price{font:23px/1.2 var(--anton);letter-spacing:.01em;color:var(--white);white-space:nowrap}
+.menu-group .price-old{font-size:10px;margin-bottom:5px;color:var(--gray)}
+.menu-group .add-button{font-size:9px;padding:12px 14px;font-weight:700;letter-spacing:.05em;white-space:nowrap}
+.menu-group .card-action{display:inline-flex;flex:none}
+.menu-group .card-rule{background:linear-gradient(90deg,var(--red),#e6392f22);height:1px}
+/* Feature one signature in the burger/combo opening, using the original image. */
+@media(min-width:1101px){
+ .menu-group .product-card.is-editorial{grid-column:span 2;display:grid;grid-template-columns:1.05fr 1fr}
+ .menu-group .is-editorial .card-media{aspect-ratio:auto;min-height:430px}
+ .menu-group .is-editorial .card-content{justify-content:center;padding:32px}
+ .menu-group .is-editorial .card-content h3{font-size:clamp(36px,3.5vw,51px)}
+ .menu-group .is-editorial .card-content p{font-size:13px;line-height:1.9}
+ .menu-group .is-editorial .card-footer{margin-top:24px}
+ .menu-group[data-category=combos] .product-card.is-editorial{grid-column:1/-1;grid-template-columns:1fr 1fr}
+}
+body.light-theme .menu-group .product-card{background:#fffcf7;box-shadow:none;border-color:var(--line)}
+body.light-theme .menu-group .product-card:focus-within,body.light-theme .menu-group .product-card:hover{border-color:var(--red)}
+body.light-theme .menu-group .card-tag{color:#af2921}
+body.light-theme .menu-group .card-content p{color:#625a51}
+body.light-theme .filter.is-active{color:white}
+body.light-theme .add-button:hover{color:white}
+@media(min-width:721px) and (max-width:1100px){
+ .menu-group .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+ .menu-group .card-content{padding:22px}
+ .menu-group .card-content h3{font-size:30px}
+ .category-heading{grid-template-columns:32px 1fr 220px;gap:14px}
+}
+@media(max-width:720px){
+ .menu .center-heading{grid-template-columns:1fr;gap:18px}
+ .menu .center-heading .eyebrow{margin-bottom:0}
+ .menu .center-heading h2{font-size:clamp(70px,18vw,110px)}
+ .menu .center-heading>p:last-child{max-width:none;font-size:13px;margin:0}
+ .menu .filters{margin:26px 0 18px;padding:4px 1px 16px;scroll-snap-type:x proximity}
+ .filter{scroll-snap-align:start}
+ .menu-tools{grid-template-columns:1fr;gap:12px}
+ .sort-box{justify-content:space-between}.sort-box select{flex:1;max-width:240px}
+ .menu-result{margin:16px 0 38px}
+ .menu-group{margin-top:62px}
+ .category-heading{grid-template-columns:28px 1fr;align-items:start;gap:10px;padding-bottom:20px;margin-bottom:22px}
+ .category-heading h3{font-size:clamp(32px,7.5vw,46px);line-height:1.08}
+ .category-heading p{grid-column:2;text-align:left;max-width:32ch;font-size:11px;margin:0}
+ .category-index{font-size:10px;padding-top:4px}
+ .menu-group .product-grid{grid-template-columns:1fr;gap:24px}
+ .menu-group .card-media{aspect-ratio:5/4}
+ .menu-group .card-content{padding:22px}
+ .menu-group .card-content h3{font-size:31px;line-height:1.12}
+ .menu-group .card-content p{font-size:12px;line-height:1.8;margin-bottom:20px}
+ .menu-group .card-meta{margin-bottom:14px}
+ .menu-group .price{font-size:24px}
+ .menu-group .add-button{padding:12px 17px;font-size:10px}
+ .menu-group .card-footer{padding-top:16px}
+}
